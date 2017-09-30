@@ -10,8 +10,9 @@ const compiler = webpack(webpackConfig);
 
 const devMiddleware = webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
+    quiet: true,
     stats: {
-        colors: true,
+        colors: true
     }
 });
 const hotMiddleware = webpackHotMiddleware(compiler);
