@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@pages/Home.vue'
 import About from '@pages/About.vue'
+import Help from '@pages/Help.vue'
 import NoFind from '@pages/404.vue'
 
 Vue.use(Router);
@@ -16,6 +17,10 @@ const router = new Router({
         {
             path: '/about',
             component: About,
+        },
+        {
+            path: '/help',
+            component: Help,
         },
         {
             path: '*',

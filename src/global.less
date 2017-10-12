@@ -1,8 +1,45 @@
-body {
-    color: #ff0000;
+/*
+ 重置
+ */
+html, body, ul, div, p {margin: 0;padding: 0;}
+body {font-size: 14px;font-family: microsoft yahei;color: #666;-webkit-tap-highlight-color:rgba(255,0,0,0);}
+h1,h2,h3,h4,h5,h6,pre,code,em {font-weight: normal;font-style: normal;}
+ul {list-style: none;}
+a {text-decoration:none;color: #666;}
+a:link,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
 }
-.ht {
-    p {
-        color: blue;
-    }
+
+/*
+ 功能类
+ */
+.flex() {
+    display: flex;
+}
+
+.db { //flex布局
+    .flex();
+}
+
+.v { //flex水平方向居中
+    .flex();
+    justify-content: center;
+}
+
+.h { //flex垂直方向居中
+    .flex();
+    align-items: center;
+}
+
+.vh { //flex水平垂直方向居中
+    .flex();
+    justify-content: center;
+    align-items: center;
+}
+
+.fx1 {
+    flex: 1;
 }
