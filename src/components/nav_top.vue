@@ -17,18 +17,17 @@
             }
         }
     }
+    .router-link-exact-active {
+        background: #ff4605;
+    }
 </style>
 
 <script>
     export default{
-        data(){
-            return {
-                items: [
-                    {route: '/', name: 'Home'},
-                    {route: '/about', name: 'About'},
-                    {route: '/help', name: 'Help'},
-                ]
+        props: {
+            items: {
+                type: Array,
             }
-        }
+        },
     }
 </script>

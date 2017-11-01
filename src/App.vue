@@ -1,16 +1,25 @@
 <template>
     <div>
-        <header-component/>
+        <nav-top :items="items"/>
         <router-view></router-view>
     </div>
 </template>
 
 <script>
     import './global.less';
-    import HeaderComponent from '@components/header.vue'
+    import NavTop from '@components/nav_top.vue'
     export default{
         components: {
-            HeaderComponent,
-        }
+            NavTop,
+        },
+        data() {
+            return {
+                items: [
+                    {route: '/', name: 'Home', id: 1},
+                    {route: '/about', name: 'About', id: 2},
+                    {route: '/help', name: 'Help', id: 3},
+                ],
+            }
+        },
     }
 </script>
