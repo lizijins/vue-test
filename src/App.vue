@@ -10,14 +10,14 @@
     import NavTop from '@components/nav_top.vue'
     export default{
         components: {
-            NavTop,
+            NavTop
         },
         data() {
             return {
                 items: [
-                    {route: '/', name: 'Home', id: 1},
-                    {route: '/about', name: 'About', id: 2},
-                    {route: '/help', name: 'Help', id: 3},
+                    {route: '/', name: 'Home'},
+                    {route: '/about', name: 'About'},
+                    {route: '/help', name: 'Help'},
                 ],
             }
         },

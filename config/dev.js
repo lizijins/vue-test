@@ -1,5 +1,6 @@
 const express = require('express');
 const webpack = require('webpack');
+const mock = require('mockjs');
 const path = require('path');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
@@ -24,6 +25,17 @@ compiler.plugin('compilation', function (compilation) {
 });
 app.use(devMiddleware);
 app.use(hotMiddleware);
+
+app.all('/test.action', function(req, res) {
+    res.json(mock.mock({
+        "status": 200,
+        "data|1-9": [{
+            "name|5-8": /[a-zA-Z]/,
+            "id|+1": 1,
+            "value|0-500": 20
+        }]
+    }));
+});
 
 app.get('*', function(req, res) {
     res.sendfile(path.resolve(__dirname, '../index.html'));
