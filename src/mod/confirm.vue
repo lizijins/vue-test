@@ -1,6 +1,6 @@
 <template>
     <transition name="fade">
-        <div class="shadow vh" v-show="show">
+        <div class="shadow vh" v-show="is_show">
             <div class="box">
                 <div class="tips vh">{{txt}}</div>
                 <div class="db">
@@ -21,18 +21,18 @@
         bottom: 0;
         background: rgba(0,0,0,0.5);
         z-index: 999;
-    }
-    .box {
-        width: 200px;
-        background: #ffffff;
-        transform: translate(0,-50%);
-        .tips {
-            min-height: 40px;
-            padding: 20px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        .btn {
-            padding: 10px;
+        .box {
+            width: 200px;
+            background: #ffffff;
+            transform: translate(0,-50%);
+            .tips {
+                min-height: 40px;
+                padding: 20px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .btn {
+                padding: 10px;
+            }
         }
     }
     .fade-enter-active {
@@ -44,15 +44,14 @@
 </style>
 
 <script>
+    import { createNamespacedHelpers } from 'vuex';
+    const { mapState, mapMutations } = createNamespacedHelpers('moduleConfirm');
+
     export default{
         props: {
             txt: { //提示文案
                 type: String,
                 required: true
-            },
-            show: { //显示或隐藏确认框
-                type: Boolean,
-                default: false
             },
             is_cancel: { //是否显示取消按钮
                 type: Boolean,
@@ -79,15 +78,41 @@
                 default: () => {}
             }
         },
+        computed: {
+            ...mapState([
+                'is_show'
+            ])
+        },
         methods: {
             cancelFunc() {
-                this.$emit('hideBox', false);
+                this.hideConfirm();
                 this.cancel();
             },
             okFunc() {
-                this.$emit('hideBox', false);
+                this.hideConfirm();
                 this.ok();
-            }
+            },
+            ...mapMutations([
+                'showConfirm',
+                'hideConfirm'
+            ])
+        },
+        beforeCreate() {
+            //动态注册confirm的状态模块
+            this.$store.registerModule('moduleConfirm', {
+                namespaced: true,
+                state: {
+                    is_show: false
+                },
+                mutations: {
+                    hideConfirm: (state) => {
+                        state.is_show = false;
+                    },
+                    showConfirm: (state) => {
+                        state.is_show = true;
+                    }
+                }
+            });
         }
     }
 </script>
