@@ -4,10 +4,6 @@ const merge = require('webpack-merge');
 const webpackConfig = require('./webpack.config.js');
 
 const devWebpackConfig = merge(webpackConfig, {
-    entry: [
-        'webpack-hot-middleware/client?reload=true',
-        './src/main.js'
-    ],
     module: {
         rules: [
             {

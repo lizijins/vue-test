@@ -1,8 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
+const entry = require('./entry');
 
 module.exports = {
-    entry: './src/main.js',
+    entry: entry,
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist',

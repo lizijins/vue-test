@@ -37,8 +37,12 @@ app.all('/test.action', function(req, res) {
     }));
 });
 
-app.get('*', function(req, res) {
-    res.sendfile(path.resolve(__dirname, '../index.html'));
+app.get('/test1.html', function(req, res) {
+    res.sendfile(path.resolve(__dirname, '../src/views/test1/test1.html'));
+});
+
+app.get('/test2.html', function(req, res) {
+    res.sendfile(path.resolve(__dirname, '../src/views/test2/test2.html'));
 });
 
 // Serve the files on port 3000.
