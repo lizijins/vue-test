@@ -22,9 +22,14 @@ const devWebpackConfig = merge(webpackConfig, {
             }
         ]
     },
+    watch: true,
+    watchOptions: {
+        aggregateTimeout: 500,
+        poll: 1000,
+    },
     devtool: '#eval-source-map',
     plugins: [
-        new webpack.HotModuleReplacementPlugin()
+        // new webpack.HotModuleReplacementPlugin()
     ]
 });
 

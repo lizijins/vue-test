@@ -35,5 +35,16 @@ module.exports = {
             '@style': path.resolve(__dirname, '../src/style'),
         }
     },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor'],
+            minChunks: Infinity
+        }),
+
+        // 用hash值替代数字模块id
+        // new webpack.HashedModuleIdsPlugin(),
+
+        // new WebpackChunkHash()
+    ]
 };
 

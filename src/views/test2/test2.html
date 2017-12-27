@@ -6,7 +6,16 @@
     <title>test2</title>
 </head>
 <body>
-<div id="app"></div>
+<div id="app">
+    <a @click="showBox">弹层层</a>
+
+    <mod-confirm :txt="confirm.txt"
+                 :ok="confirm.ok"
+                 ref="showBox"
+    >
+    </mod-confirm>
+</div>
+<script src="/dist/vendor.js"></script>
 <script src="/dist/test2/test2.js"></script>
 </body>
 </html>

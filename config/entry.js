@@ -42,3 +42,4 @@ var vendor = [
 entry.vendor = vendor;
 
 module.exports = entry;
+// 'webpack-hot-middleware/client?reload=true',
