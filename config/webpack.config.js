@@ -32,6 +32,7 @@ module.exports = {
             '@pages': path.resolve(__dirname, '../src/pages'),
             '@components': path.resolve(__dirname, '../src/components'),
             '@mod': path.resolve(__dirname, '../src/mod'),
+            '@style': path.resolve(__dirname, '../src/style'),
         }
     },
 };
