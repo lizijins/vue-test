@@ -7,8 +7,7 @@ const webpackConfig = require('./webpack.config.js');
 
 const proWebpackConfig = merge(webpackConfig, {
     output: {
-        // filename: '[name].[chunkhash].js'
-        filename: '[name].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [
@@ -37,10 +36,16 @@ const proWebpackConfig = merge(webpackConfig, {
         new ExtractTextPlugin({
             filename: 'css/[name].[contenthash].css'
         }),
-        // new HtmlWebpackPlugin({
-        //     filename: path.resolve(__dirname, '../dist/index.html'),
-        //     template: 'index.html',
-        // }),
+        new HtmlWebpackPlugin({
+            filename:'test1/test1.html',
+            template: 'src/views/test1/test1.html',
+            chunks: ['vendor', 'test1/test1'],
+        }),
+        new HtmlWebpackPlugin({
+            filename: 'test2/test2.html',
+            template:  'src/views/test2/test2.html',
+            chunks: ['vendor', 'test2/test2'],
+        }),
     ]
 });
 

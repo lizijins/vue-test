@@ -7,7 +7,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/dist',
-        filename: '[name].js'
     },
     module: {
         rules: [
@@ -29,10 +28,8 @@ module.exports = {
     resolve: {
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
-            '@pages': path.resolve(__dirname, '../src/pages'),
             '@components': path.resolve(__dirname, '../src/components'),
             '@mod': path.resolve(__dirname, '../src/mod'),
-            '@style': path.resolve(__dirname, '../src/style'),
         }
     },
     plugins: [

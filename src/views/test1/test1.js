@@ -2,7 +2,6 @@ import Vue from 'vue'
 import Vuex from 'vuex';
 import VueResource from 'vue-resource';
 import modConfirm from '@mod/confirm.vue'
-import '@style/global.less';
 
 Vue.use(VueResource);
 Vue.use(Vuex);
