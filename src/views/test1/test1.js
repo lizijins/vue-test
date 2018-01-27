@@ -22,7 +22,7 @@ let app = new Vue({
     components: { modConfirm },
     data: {
         confirm: {
-            txt: '确定吗',
+            txt: '确定1吗',
             show: false,
             is_cancel: false,
             ok() {
