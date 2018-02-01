@@ -43,6 +43,7 @@ getFiles(SRC_PATH);
 var vendor = [
     'vue',
     'vue-resource',
+    'element-ui/lib/theme-chalk/index.css',
     path.resolve(__dirname, '../src/style/global.less'),
 ];
 
