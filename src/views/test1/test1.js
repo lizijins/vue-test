@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Vuex from 'vuex';
-import { Alert } from 'element-ui'
+import { Alert } from 'element-ui';
 import VueResource from 'vue-resource';
 import modConfirm from '@mod/confirm.vue'
 
-Vue.use(VueResource);
 Vue.use(Vuex);
+Vue.use(VueResource);
 Vue.use(Alert);
 
 let store = new Vuex.Store({
