@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import Vuex from 'vuex';
-import { Alert } from 'element-ui';
+import ElementUI from 'element-ui';
 import VueResource from 'vue-resource';
 import modConfirm from '@mod/confirm.vue'
 
 Vue.use(Vuex);
 Vue.use(VueResource);
-Vue.use(Alert);
+Vue.use(ElementUI);
 
 let store = new Vuex.Store({
     state: {
@@ -35,11 +35,18 @@ let app = new Vue({
                 });
             }
         },
+        value9: [4, 8]
     },
     methods: {
         showBox() {
             this.$refs.showBox.showConfirm();
         },
+        handleSizeChange(val) {
+            console.log(`每页 ${val} 条`);
+        },
+        handleCurrentChange(val) {
+            console.log(`当前页: ${val}`);
+        }
     }
 });
 
