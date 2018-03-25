@@ -1,12 +1,12 @@
-var path = require('path');
-var fs = require('fs');
+let path = require('path');
+let fs = require('fs');
 
 // 业务代码
-var SRC_PATH = path.resolve(__dirname, '../src/views');
+let SRC_PATH = path.resolve(__dirname, '../src/views');
 // 要查找的文件后缀
-var fileExp = /.*\.js$/;
+let fileExp = /.*\.js$/;
 // 返回的webpack所需的entry对象
-var entry = {};
+let entry = {};
 
 /**
  * 收集文件列表
@@ -14,8 +14,8 @@ var entry = {};
  * @returns {null}
  */
 function getFiles(target) {
-    var files = fs.readdirSync(target);
-    var fl = files.length;
+    let files = fs.readdirSync(target);
+    let fl = files.length;
     if (!fl) {
         return null;
     }
@@ -25,7 +25,7 @@ function getFiles(target) {
         if (fs.statSync(file).isDirectory()) {
             getFiles(file);
         } else if (fileExp.test(file)) {
-            var fileName = file.replace(SRC_PATH, '')
+            let fileName = file.replace(SRC_PATH, '')
                 .replace('.js', '')
                 .replace('\\', '')
                 .replace('\\', '/');
@@ -40,7 +40,7 @@ function getFiles(target) {
 
 getFiles(SRC_PATH);
 
-var vendor = [
+let vendor = [
     'vue',
     'vue-resource',
     path.resolve(__dirname, '../src/style/global.less'),
